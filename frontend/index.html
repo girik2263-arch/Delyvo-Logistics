@@ -127,8 +127,258 @@ th{color:#667085;font-weight:600}
   .mobile-nav a{font-size:10px;color:#667085;text-decoration:none;text-align:center}
   .mobile-nav a.active{color:#1d4ed8;font-weight:700}
 }
+
+/* ===== DELYVO PROFESSIONAL UI ===== */
+:root{
+  --dv-primary:#2563eb;
+  --dv-primary-dark:#1d4ed8;
+  --dv-bg:#f5f7fb;
+  --dv-card:#fff;
+  --dv-border:#e6eaf0;
+  --dv-text:#101828;
+  --dv-muted:#667085;
+  --dv-shadow:0 8px 24px rgba(16,24,40,.06);
+}
+
+html{scroll-behavior:smooth}
+body{
+  background:var(--dv-bg)!important;
+  color:var(--dv-text)!important;
+  font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+}
+
+.sidebar{
+  width:260px!important;
+  background:linear-gradient(180deg,#0b1220,#111b2e)!important;
+  padding:22px 14px!important;
+  box-shadow:8px 0 28px rgba(15,23,42,.08)!important;
+}
+
+.logo{
+  font-size:29px!important;
+  letter-spacing:-.7px;
+}
+.logo span{color:#60a5fa!important}
+
+.nav-title{
+  font-size:10px!important;
+  font-weight:800!important;
+  letter-spacing:.12em;
+  color:#7f8da5!important;
+}
+
+.nav a{
+  border:1px solid transparent!important;
+  border-radius:11px!important;
+  color:#b8c4d6!important;
+  transition:.18s ease!important;
+}
+
+.nav a:hover{
+  background:rgba(255,255,255,.07)!important;
+  color:#fff!important;
+}
+
+.nav a.active{
+  background:linear-gradient(135deg,#2563eb,#1d4ed8)!important;
+  color:#fff!important;
+  box-shadow:0 7px 18px rgba(37,99,235,.28)!important;
+}
+
+.main{
+  margin-left:260px!important;
+  width:calc(100% - 260px)!important;
+  padding:30px!important;
+}
+
+.title h1{
+  font-size:30px!important;
+  letter-spacing:-.6px;
+}
+
+.title p{color:var(--dv-muted)!important}
+
+.profile{
+  border:1px solid var(--dv-border)!important;
+  border-radius:14px!important;
+  box-shadow:var(--dv-shadow)!important;
+}
+
+.avatar{
+  background:linear-gradient(135deg,#2563eb,#4f46e5)!important;
+}
+
+.stats{
+  grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  gap:14px!important;
+}
+
+.stat{
+  border:1px solid var(--dv-border)!important;
+  border-radius:16px!important;
+  box-shadow:var(--dv-shadow)!important;
+  transition:.18s ease!important;
+}
+
+.stat:hover{
+  transform:translateY(-2px);
+  box-shadow:0 14px 32px rgba(16,24,40,.10)!important;
+}
+
+.stat-icon{
+  border-radius:11px!important;
+  background:#eff6ff!important;
+  color:var(--dv-primary)!important;
+}
+
+.stat-number{
+  font-size:28px!important;
+  letter-spacing:-.5px;
+}
+
+.grid{gap:18px!important}
+
+.panel{
+  border:1px solid var(--dv-border)!important;
+  border-radius:16px!important;
+  box-shadow:var(--dv-shadow)!important;
+}
+
+.panel h2{
+  font-size:16px!important;
+  letter-spacing:-.2px;
+}
+
+th{
+  font-size:11px!important;
+  text-transform:uppercase;
+  letter-spacing:.06em;
+  color:#7a8699!important;
+}
+
+.badge{border-radius:999px!important}
+
+.action{
+  border:1px solid var(--dv-border)!important;
+  border-radius:12px!important;
+  transition:.18s ease!important;
+}
+
+.action:hover{
+  background:#f8fbff!important;
+  border-color:#cbd9f5!important;
+  transform:translateY(-1px);
+}
+
+#DELYVO_SHIPMENT_DETAILS,
+#DELYVO_SHIPMENT_ACTIONS,
+#DELYVO_NDR_MANAGER,
+#DELYVO_COLLECTIONS_MANAGER,
+#DELYVO_REPORTS_MANAGER{
+  margin:18px 0!important;
+  padding:22px!important;
+  background:#fff!important;
+  border:1px solid var(--dv-border)!important;
+  border-radius:16px!important;
+  box-shadow:var(--dv-shadow)!important;
+}
+
+#DELYVO_SHIPMENT_DETAILS h2,
+#DELYVO_SHIPMENT_ACTIONS h2,
+#DELYVO_NDR_MANAGER h2,
+#DELYVO_COLLECTIONS_MANAGER h2,
+#DELYVO_REPORTS_MANAGER h2{
+  font-size:18px!important;
+}
+
+#DELYVO_SHIPMENT_DETAILS input,
+#DELYVO_SHIPMENT_ACTIONS input,
+#DELYVO_SHIPMENT_ACTIONS select,
+#DELYVO_NDR_MANAGER input,
+#DELYVO_NDR_MANAGER select,
+#DELYVO_NDR_MANAGER textarea,
+#DELYVO_COLLECTIONS_MANAGER input,
+#DELYVO_COLLECTIONS_MANAGER select,
+#DELYVO_COLLECTIONS_MANAGER textarea{
+  border:1px solid #dfe5ee!important;
+  border-radius:10px!important;
+  background:#fff!important;
+}
+
+#DELYVO_SHIPMENT_DETAILS button,
+#DELYVO_SHIPMENT_ACTIONS button,
+#DELYVO_NDR_MANAGER button,
+#DELYVO_COLLECTIONS_MANAGER button,
+#DELYVO_REPORTS_MANAGER button{
+  border:0!important;
+  border-radius:10px!important;
+  padding:10px 14px!important;
+  background:var(--dv-primary)!important;
+  color:#fff!important;
+  font-weight:700!important;
+  box-shadow:0 5px 12px rgba(37,99,235,.15)!important;
+}
+
+#DELYVO_SHIPMENT_DETAILS button:hover,
+#DELYVO_SHIPMENT_ACTIONS button:hover,
+#DELYVO_NDR_MANAGER button:hover,
+#DELYVO_COLLECTIONS_MANAGER button:hover,
+#DELYVO_REPORTS_MANAGER button:hover{
+  background:var(--dv-primary-dark)!important;
+}
+
+#shipmentDetailsBox,
+#shipmentActionBox,
+#ndrBox,
+#collectionsBox,
+#reportsBox{
+  border:1px solid #edf0f5!important;
+  background:#f8fafc!important;
+  border-radius:12px!important;
+  color:#344054!important;
+}
+
+#reportCards>div{
+  background:linear-gradient(180deg,#fff,#f8fafc)!important;
+  border:1px solid var(--dv-border)!important;
+  border-radius:13px!important;
+  box-shadow:0 4px 12px rgba(16,24,40,.04)!important;
+}
+
+@media(max-width:1250px){
+  .stats{grid-template-columns:repeat(3,1fr)!important}
+}
+
+@media(max-width:700px){
+  .sidebar{display:none!important}
+  .main{
+    margin-left:0!important;
+    width:100%!important;
+    padding:16px 14px 82px!important;
+  }
+  .stats{
+    grid-template-columns:1fr 1fr!important;
+    gap:10px!important;
+  }
+  .stat{padding:14px!important}
+  .stat-number{font-size:23px!important}
+  .title h1{font-size:25px!important}
+  #DELYVO_SHIPMENT_DETAILS,
+  #DELYVO_SHIPMENT_ACTIONS,
+  #DELYVO_NDR_MANAGER,
+  #DELYVO_COLLECTIONS_MANAGER,
+  #DELYVO_REPORTS_MANAGER{
+    padding:16px!important;
+  }
+}
+
 </style>
-</head>
+
+<script>
+/* ===== DELYVO API BASE FIX ===== */
+window.DELYVO_API_BASE = "http://127.0.0.1:5000";
+</script>
+\n</head>
 
 <body>
 <div class="app">
@@ -338,7 +588,7 @@ th{color:#667085;font-weight:600}
 <script>
 async function loadDashboard() {
   try {
-    const response = await fetch("/api/dashboard");
+    const response = await fetch(window.DELYVO_API_BASE + "/api/dashboard");
     if (!response.ok) throw new Error("Dashboard API failed");
 
     const data = await response.json();
@@ -614,7 +864,7 @@ async function loadShipmentCompanies() {
   select.innerHTML = '<option value="">Loading companies...</option>';
 
   try {
-    const response = await fetch("/api/companies");
+    const response = await fetch(window.DELYVO_API_BASE + "/api/companies");
 
     if (!response.ok) {
       throw new Error("Unable to load companies");
@@ -732,7 +982,7 @@ async function createShipmentFromDashboard(event) {
   }
 
   try {
-    const response = await fetch("/api/shipments", {
+    const response = await fetch(window.DELYVO_API_BASE + "/api/shipments", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -856,7 +1106,7 @@ async function loadShipments(){
   box.textContent="Loading shipments...";
 
   try{
-    const r=await fetch("/api/shipments");
+    const r=await fetch(window.DELYVO_API_BASE + "/api/shipments");
     const data=await r.json();
 
     if(!Array.isArray(data)){
@@ -887,7 +1137,7 @@ async function loadShipmentReport(){
   box.textContent="Loading report...";
 
   try{
-    const r=await fetch("/api/reports/status");
+    const r=await fetch(window.DELYVO_API_BASE + "/api/reports/status");
     const data=await r.json();
     box.textContent=JSON.stringify(data,null,2);
   }catch(e){
@@ -1371,7 +1621,7 @@ async function loadCollections(){
 
   try{
 
-    const r = await fetch("/api/collections");
+    const r = await fetch(window.DELYVO_API_BASE + "/api/collections");
     const data = await r.json();
 
     collectionBox({
@@ -1424,7 +1674,7 @@ async function createCollection(){
 
   try{
 
-    const r = await fetch("/api/collections",{
+    const r = await fetch(window.DELYVO_API_BASE + "/api/collections",{
       method:"POST",
       headers:{
         "Content-Type":"application/json"
@@ -1527,7 +1777,7 @@ async function loadFinanceSummary(){
 
   try{
 
-    const r = await fetch("/api/finance/summary");
+    const r = await fetch(window.DELYVO_API_BASE + "/api/finance/summary");
     const data = await r.json();
 
     collectionBox({
