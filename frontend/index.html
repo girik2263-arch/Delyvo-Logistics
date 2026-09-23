@@ -326,7 +326,7 @@ th{color:#667085;font-weight:600}
 <script>
 async function loadDashboard() {
   try {
-    const response = await fetch("https://api.delyvo.in/api/dashboard");
+    const response = await fetch("/api/dashboard");
     if (!response.ok) throw new Error("Dashboard API failed");
 
     const data = await response.json();
