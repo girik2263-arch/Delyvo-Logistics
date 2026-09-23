@@ -1,21 +1,12 @@
-from app.routes.ndr import bp as ndr_bp
-from app.routes.pilot_assignment import bp as pilot_assignment_bp
 from app.routes.lifecycle import bp as lifecycle_bp
 from app.routes.control_dashboard import bp as control_dashboard_bp
 from app.routes.auth import auth_bp
 from app.routes.companies import companies_bp
 from app.routes.dashboard import dashboard_bp
 from app.routes.shipments import shipments_bp
-from app.routes.collections import bp as collections_bp
-from app.routes.finance import bp as finance_bp
-from app.routes.reports import bp as reports_bp
+
 
 def register_routes(app):
-    app.register_blueprint(reports_bp)
-    app.register_blueprint(finance_bp)
-    app.register_blueprint(collections_bp)
-    app.register_blueprint(ndr_bp)
-    app.register_blueprint(pilot_assignment_bp)
     app.register_blueprint(lifecycle_bp)
     app.register_blueprint(control_dashboard_bp)
     app.register_blueprint(shipments_bp)

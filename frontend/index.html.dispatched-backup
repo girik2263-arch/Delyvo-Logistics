@@ -988,7 +988,7 @@ style="padding:10px">
 <option value="pickup_requested">Pickup Requested</option>
 <option value="picked_up">Picked Up</option>
 <option value="at_hub">At Hub</option>
-
+<option value="dispatched">Dispatched</option>
 <option value="out_for_delivery">Out For Delivery</option>
 <option value="delivered">Delivered</option>
 <option value="cancelled">Cancelled</option>

@@ -7,24 +7,33 @@ dashboard_bp = Blueprint("dashboard", __name__)
 @dashboard_bp.get("/api/dashboard")
 def dashboard():
     companies = supabase_request(
-        "GET", "companies", params={"select":"id"}
+        "GET", "companies",
+        params={"select": "id"}
     ) or []
 
     hubs = supabase_request(
-        "GET", "hubs", params={"select":"id"}
+        "GET", "hubs",
+        params={"select": "id"}
     ) or []
 
     partners = supabase_request(
         "GET", "partners",
-        params={"select":"id,status"}
+        params={"select": "id,status"}
     ) or []
 
-    shipments = supabase_request(
+    all_shipments = supabase_request(
         "GET", "shipments",
         params={
-            "select":"id,awb,company_id,delivery_city,status,created_at",
-            "order":"created_at.desc",
-            "limit":"10"
+            "select": "id,status"
+        }
+    ) or []
+
+    recent_shipments = supabase_request(
+        "GET", "shipments",
+        params={
+            "select": "id,awb,company_id,delivery_city,status,created_at",
+            "order": "created_at.desc",
+            "limit": "10"
         }
     ) or []
 
@@ -34,7 +43,7 @@ def dashboard():
     )
 
     in_transit = sum(
-        1 for shipment in shipments
+        1 for shipment in all_shipments
         if shipment.get("status") in [
             "pickup_requested",
             "picked_up",
@@ -44,7 +53,7 @@ def dashboard():
     )
 
     delivered = sum(
-        1 for shipment in shipments
+        1 for shipment in all_shipments
         if shipment.get("status") == "delivered"
     )
 
@@ -53,9 +62,9 @@ def dashboard():
             "companies": len(companies),
             "hubs": len(hubs),
             "active_pilots": active_pilots,
-            "total_shipments": len(shipments),
+            "total_shipments": len(all_shipments),
             "in_transit": in_transit,
             "delivered": delivered
         },
-        "recent_shipments": shipments
+        "recent_shipments": recent_shipments
     })

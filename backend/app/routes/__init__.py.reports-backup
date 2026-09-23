@@ -8,10 +8,8 @@ from app.routes.dashboard import dashboard_bp
 from app.routes.shipments import shipments_bp
 from app.routes.collections import bp as collections_bp
 from app.routes.finance import bp as finance_bp
-from app.routes.reports import bp as reports_bp
 
 def register_routes(app):
-    app.register_blueprint(reports_bp)
     app.register_blueprint(finance_bp)
     app.register_blueprint(collections_bp)
     app.register_blueprint(ndr_bp)

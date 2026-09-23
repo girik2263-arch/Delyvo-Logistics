@@ -1,4 +1,4 @@
-from flask import Flask, send_from_directory
+from flask import Flask
 from flask_cors import CORS
 
 from app.routes import register_routes
@@ -8,12 +8,6 @@ def create_app():
     app = Flask(__name__)
 
     CORS(app)
-
-    frontend_dir = "/data/data/com.termux/files/home/Delyvo/frontend"
-
-    @app.get("/")
-    def dashboard_page():
-        return send_from_directory(frontend_dir, "index.html")
 
     @app.get("/api/health")
     def health():
