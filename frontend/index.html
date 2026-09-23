@@ -177,25 +177,25 @@ th{color:#667085;font-weight:600}
 
   <div class="stat">
     <div class="stat-top"><span>Total Shipments</span><div class="stat-icon">▣</div></div>
-    <div class="stat-number">0</div>
+    <div class="stat-number" id="totalShipments">0</div>
     <div class="stat-change">No shipment data yet</div>
   </div>
 
   <div class="stat">
     <div class="stat-top"><span>In Transit</span><div class="stat-icon">↗</div></div>
-    <div class="stat-number">0</div>
+    <div class="stat-number" id="inTransit">0</div>
     <div class="stat-change">Currently moving</div>
   </div>
 
   <div class="stat">
     <div class="stat-top"><span>Delivered</span><div class="stat-icon">✓</div></div>
-    <div class="stat-number">0</div>
+    <div class="stat-number" id="delivered">0</div>
     <div class="stat-change">Successfully delivered</div>
   </div>
 
   <div class="stat">
     <div class="stat-top"><span>Active Pilots</span><div class="stat-icon">●</div></div>
-    <div class="stat-number">0</div>
+    <div class="stat-number" id="activePilots">0</div>
     <div class="stat-change">Available partners</div>
   </div>
 
@@ -321,6 +321,35 @@ th{color:#667085;font-weight:600}
   <a href="#">●<br>Pilots</a>
   <a href="#">⚙<br>More</a>
 </nav>
+
+
+<script>
+async function loadDashboard() {
+  try {
+    const response = await fetch("https://api.delyvo.in/api/dashboard");
+    if (!response.ok) throw new Error("Dashboard API failed");
+
+    const data = await response.json();
+    const stats = data.stats || {};
+
+    document.getElementById("totalShipments").textContent =
+      stats.total_shipments ?? 0;
+
+    document.getElementById("inTransit").textContent =
+      stats.in_transit ?? 0;
+
+    document.getElementById("delivered").textContent =
+      stats.delivered ?? 0;
+
+    document.getElementById("activePilots").textContent =
+      stats.active_pilots ?? 0;
+  } catch (error) {
+    console.error("Dashboard load failed:", error);
+  }
+}
+
+loadDashboard();
+</script>
 
 </body>
 </html>
